@@ -49,6 +49,6 @@
       %hr.gradient-white
       .footer
         - if @blog
-          = (@blog.footer.empty?) ? "&copy; #{Date.today.year}".html_safe : @markdown_parser.markdown_to_html(@blog.footer).html_safe
+          = (!@blog.footer? or @blog.footer.empty?) ? "&copy; #{Date.today.year}".html_safe : @markdown_parser.markdown_to_html(@blog.footer).html_safe
     - unless @blog.nil? or  @blog.google_analytics.nil? or @blog.google_analytics.empty?
       = render :template => 'layouts/almanac/_ga'

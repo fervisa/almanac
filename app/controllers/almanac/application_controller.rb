@@ -20,5 +20,9 @@ module Almanac
         Rakismet.url = (@blog.rakismet_url) ? @blog.rakismet_url : ''
       end
     end
+
+    def current_user
+      current_usuario
+    end
   end
 end
